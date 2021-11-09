@@ -1,1 +1,18 @@
 RICHARD PASSOU AQUI !!!!!!
+
+      int senha = 123;
+
+            for (int I = 0; I < 3; I++)
+            {
+                Console.WriteLine("Usuario digite sua senha: ");
+                senha = int.Parse(Console.ReadLine());
+                if (senha == 123)
+                {
+                    Console.WriteLine("!ACESSO LIBERADO BEM VINDO!");
+                }
+                else
+                {
+                    Console.WriteLine("!ACESSO NEGADO! TENTE NOVAMENTE");
+                }
+            }
+            Console.ReadLine();
