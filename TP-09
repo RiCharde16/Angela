@@ -1,0 +1,19 @@
+        private void button2_Click(object sender, EventArgs e)
+        {
+            nome_texto.Clear();
+            senha_texto.Clear();
+        }
+
+        private void btnLogar_Click(object sender, EventArgs e)
+        {
+            string nome;
+            int senha = 123;
+            nome = nome_texto.Text;
+            senha = Convert.ToInt16(senha_texto.Text);
+            if (senha == 123)
+            {
+                MessageBox.Show("!ACESSO PERMITIDO! \n BEM VINDO " + nome);
+            }
+            else { 
+                MessageBox.Show("!ACESSO NEGADO");
+            }
