@@ -1,0 +1,73 @@
+ra   = []
+nome = []
+Data = []
+opcao = 0
+
+while opcao != 6:
+  try:
+        print()
+        print('SISTEMA PARA CADASTRO DE ALUNOS')
+        print()
+        print()
+        print(' 1) INCLUIR \n 2) IMPRMIR \n 3) ALTERAR \n 4) EXCLUIR \n 5) CONSULTAR \n 6) SAIR')
+        print()
+        opcao = int(input('Digite sua opção: '))
+
+        if opcao == 1:
+                Ra_aluno = int(input('Entre com o RA: '))
+                nome_aluno = input('Entre com nome: ')
+                Data_aluno = input("Entre com a data de nascimento: ")
+                #nome.append(input('Entre com nome: '))
+                #Data.append(input("Entre com a data de nascimento: "))
+                if Ra_aluno in ra:
+                    print("\n !RA JA EXISTE!")
+                else:
+                    ra.append(Ra_aluno)
+                    nome.append(nome_aluno)
+                    Data.append(Data_aluno)
+        elif opcao == 2:
+            print('RA   | Nome   | DATA NASCIMENTO')
+            print('--------------------------')
+            for aluno in range(len(nome)):
+                print(ra[aluno], end = '\t')
+                print(nome[aluno], end ='\t')
+                print(Data[aluno])
+        elif opcao == 3:
+            ra_aluno   = int(input('Informe o RA do aluno: '))
+            #---Forma fácil-----------------
+            #ra_posicao = ra.index(ra_aluno)
+            #-------------------------------
+
+            #---Forma raiz------------------
+            ra_posicao = ''
+            for posicao in range(len(ra)):
+                if ra[posicao] == ra_aluno:
+                    ra_posicao = posicao
+            #-------------------------------
+            if ra_posicao == '':
+                print('RA não existe!!')
+            else:
+                nome[ra_posicao] = input('Informe o nome correto: ')
+                Data[ra_posicao] = input('informe a data correta: ')
+                print()
+                print('Alteração com sucesso!!!')
+        elif opcao == 4:
+            ra_aluno = int(input('Informe o RA do aluno: '))
+            ra_posicao = ra.index(ra_aluno)
+            del ra[ra_posicao]
+            del nome[ra_posicao]
+            del Data[ra_posicao]
+            print()
+            print('Exlusão com sucesso!!!')
+        elif opcao == 5:
+            ra_aluno = int(input('Informe o RA do aluno: '))
+            ra_posicao = ra.index(ra_aluno)
+            print('RA   | Nome   | DATA NASCIMENTO')
+            print('--------------------------')
+            print(ra[ra_posicao], end='\t')
+            print(nome[ra_posicao], end='\t')
+            print(Data[ra_posicao])
+  except BaseException:
+      print('RA não existe!!')
+else:
+    print('Até logo!!!')
